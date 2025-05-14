@@ -1,15 +1,12 @@
-# Lab 6: Dino Game on Basys3
+# Dino Game on Basys3
 
 ## Overview
 This project implements a simplified version of the Chrome Dinosaur Game on a Basys3 FPGA board. It includes modules for the dinosaur character, obstacles (cacti and birds), title screen, and display drivers.
 
-## Assignment
-Refer to `assignment.pdf` for detailed specifications and requirements.
 
 ## Directory Structure
 ```
 /            Project root
-├── assignment.pdf           # Lab assignment specification
 ├── README.md                # This file
 └── starter/                 # Starter code and resources
     ├── dv/                  # Verification testbenches and lint rules
