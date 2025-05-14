@@ -1,0 +1,979 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
+| Date         : Mon Nov 25 16:28:40 2024
+| Host         : aringadre-IdeaPad-Flex-5-14ALC05 running 64-bit Linux Mint 22
+| Command      : report_methodology -file basys3_methodology_drc_routed.rpt -pb basys3_methodology_drc_routed.pb -rpx basys3_methodology_drc_routed.rpx
+| Design       : basys3
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 185
++-----------+------------------+-----------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                               | Violations |
++-----------+------------------+-----------------------------------------------------------+------------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree        | 1          |
+| TIMING-6  | Critical Warning | No common primary clock between related clocks            | 2          |
+| TIMING-7  | Critical Warning | No common node between related clocks                     | 2          |
+| TIMING-8  | Critical Warning | No common period between related clocks                   | 4          |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin                 | 1          |
+| TIMING-51 | Critical Warning | No common phase between related clocks from parallel CMBs | 2          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                              | 1          |
+| TIMING-15 | Warning          | Large hold violation                                      | 1          |
+| TIMING-16 | Warning          | Large setup violation                                     | 155        |
+| TIMING-18 | Warning          | Missing input or output delay                             | 16         |
++-----------+------------------+-----------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock mmcm_100_to_25_175/inst/clk_100 is defined downstream of clock clk_100 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_100 and clk_25_175_mmcm_100_to_25_175 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_100] -to [get_clocks clk_25_175_mmcm_100_to_25_175]
+Related violations: <none>
+
+TIMING-6#2 Critical Warning
+No common primary clock between related clocks  
+The clocks clk_25_175_mmcm_100_to_25_175 and clk_100 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_25_175_mmcm_100_to_25_175] -to [get_clocks clk_100]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks clk_100 and clk_25_175_mmcm_100_to_25_175 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_100] -to [get_clocks clk_25_175_mmcm_100_to_25_175]
+Related violations: <none>
+
+TIMING-7#2 Critical Warning
+No common node between related clocks  
+The clocks clk_25_175_mmcm_100_to_25_175 and clk_100 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_25_175_mmcm_100_to_25_175] -to [get_clocks clk_100]
+Related violations: <none>
+
+TIMING-8#1 Critical Warning
+No common period between related clocks  
+The clocks clk_100 and clk_1k are found related (timed together) but have no common (expandable) period
+Related violations: <none>
+
+TIMING-8#2 Critical Warning
+No common period between related clocks  
+The clocks clk_100 and clk_25_175_mmcm_100_to_25_175 are found related (timed together) but have no common (expandable) period
+Related violations: <none>
+
+TIMING-8#3 Critical Warning
+No common period between related clocks  
+The clocks clk_1k and clk_100 are found related (timed together) but have no common (expandable) period
+Related violations: <none>
+
+TIMING-8#4 Critical Warning
+No common period between related clocks  
+The clocks clk_25_175_mmcm_100_to_25_175 and clk_100 are found related (timed together) but have no common (expandable) period
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock mmcm_100_to_25_175/inst/clk_100 is created on an inappropriate internal pin mmcm_100_to_25_175/inst/clk_100. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+TIMING-51#1 Critical Warning
+No common phase between related clocks from parallel CMBs  
+The clocks clk_100 and clk_25_175_mmcm_100_to_25_175 are timed together but have no phase relationship. The design could fail in hardware. The clocks originate from two parallel Clock Modifying Blocks and at least one of the MMCM or PLLs clock dividers is not set to 1. To be safely timed, all MMCMs or PLLs involved in parallel clocking must have the clock divider set to 1.
+Related violations: <none>
+
+TIMING-51#2 Critical Warning
+No common phase between related clocks from parallel CMBs  
+The clocks clk_25_175_mmcm_100_to_25_175 and clk_100 are timed together but have no phase relationship. The design could fail in hardware. The clocks originate from two parallel Clock Modifying Blocks and at least one of the MMCM or PLLs clock dividers is not set to 1. To be safely timed, all MMCMs or PLLs involved in parallel clocking must have the clock divider set to 1.
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell dinorun/score_counter_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dinorun/cactus/active_q_reg/CLR, dinorun/cactus/cactus_image_q_reg[0]/CLR,
+dinorun/cactus/cactus_image_q_reg[1]/CLR,
+dinorun/cactus/cactus_x_q_reg[10]/CLR,
+dinorun/cactus/cactus_x_q_reg[3]/CLR, dinorun/cactus/cactus_x_q_reg[4]/CLR,
+dinorun/cactus/cactus_x_q_reg[5]/CLR, dinorun/cactus/cactus_x_q_reg[6]/CLR,
+dinorun/cactus/cactus_x_q_reg[7]/PRE, dinorun/cactus/cactus_x_q_reg[8]/CLR,
+dinorun/cactus/cactus_x_q_reg[9]/PRE,
+dinorun/cactus2/cactus_x_q_reg[6]/CLR,
+dinorun/cactus2/cactus_x_q_reg[7]/PRE,
+dinorun/cactus2/cactus_x_q_reg[8]/CLR,
+dinorun/cactus2/cactus_x_q_reg[9]/PRE (the first 15 of 22 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-15#1 Warning
+Large hold violation  
+There is a large clock skew of 6.761 ns between mmcm_100_to_25_175/inst/mmcm_adv_inst/CLKOUT0 (clocked by clk_25_175_mmcm_100_to_25_175) and synchronizer_25_175/clk_target_q1_reg/D (clocked by clk_100) that results in large hold timing violation(s) of -4.087 ns. Fixing large hold violations during routing might impact setup slack and result in more difficult timing closure
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -2.692 ns between dinorun/vsync_q_reg/C (clocked by clk_25_175_mmcm_100_to_25_175) and game_synchronizer/clk_target_q1_reg/D (clocked by clk_100). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -5.225 ns between synchronizer_25_175/sync_data_q_reg[0]_replica/C (clocked by clk_100) and dinorun/flash_dino_q_reg/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -5.407 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_2/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[0]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -5.633 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[12]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -5.633 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[13]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -5.633 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[14]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -5.633 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[15]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -5.633 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -5.633 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[4]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -5.633 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[6]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -5.633 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[8]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -5.649 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[11]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -5.649 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -5.649 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -5.707 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[10]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -5.707 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[5]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -5.707 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[7]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -5.707 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_3/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[9]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -5.726 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_1/C (clocked by clk_100) and dinorun/flash_counter_q_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -5.726 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_1/C (clocked by clk_100) and dinorun/flash_counter_q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -5.726 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_1/C (clocked by clk_100) and dinorun/flash_counter_q_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -5.726 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_1/C (clocked by clk_100) and dinorun/flash_counter_q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -5.867 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_1/C (clocked by clk_100) and dinorun/flash_counter_q_reg[4]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -5.944 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/dino_left_q_reg/Q_reg[0]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -5.950 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/bird_flap_up_q_reg/Q_reg[0]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -5.990 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -5.990 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -5.990 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[4]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -5.990 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[5]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -6.074 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[10]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -6.074 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[5]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -6.074 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[7]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -6.074 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[9]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -6.075 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[12]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -6.075 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[13]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -6.075 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[14]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -6.075 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[15]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -6.075 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[2]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -6.075 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[4]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#40 Warning
+Large setup violation  
+There is a large setup violation of -6.075 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[6]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#41 Warning
+Large setup violation  
+There is a large setup violation of -6.075 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[8]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#42 Warning
+Large setup violation  
+There is a large setup violation of -6.085 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#43 Warning
+Large setup violation  
+There is a large setup violation of -6.085 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#44 Warning
+Large setup violation  
+There is a large setup violation of -6.085 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[6]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#45 Warning
+Large setup violation  
+There is a large setup violation of -6.085 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[7]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#46 Warning
+Large setup violation  
+There is a large setup violation of -6.085 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[8]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -6.085 ns between synchronizer_25_175/sync_data_q_reg[0]_replica_4/C (clocked by clk_100) and dinorun/vga_timer/position_x_o_reg[9]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -6.087 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[0]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -6.146 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[11]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -6.146 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[1]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -6.146 ns between game_synchronizer/sync_data_q_reg[2]/C (clocked by clk_100) and dinorun/lfsr16/lfsr_q_reg[3]/CE (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -6.248 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_36_/Q_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -6.248 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_36_/Q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -6.248 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_36_/Q_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -6.248 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_36_/Q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -6.248 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_36_/Q_reg[4]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -6.248 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_36_/Q_reg[5]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -6.248 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_36_/Q_reg[6]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -6.248 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_36_/Q_reg[7]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -6.334 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -6.334 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -6.334 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#63 Warning
+Large setup violation  
+There is a large setup violation of -6.383 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#64 Warning
+Large setup violation  
+There is a large setup violation of -6.383 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[4]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#65 Warning
+Large setup violation  
+There is a large setup violation of -6.383 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[5]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#66 Warning
+Large setup violation  
+There is a large setup violation of -6.383 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[6]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#67 Warning
+Large setup violation  
+There is a large setup violation of -6.383 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[7]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#68 Warning
+Large setup violation  
+There is a large setup violation of -6.383 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[8]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#69 Warning
+Large setup violation  
+There is a large setup violation of -6.383 ns between synchronizer_25_175/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/vga_timer/position_y_o_reg[9]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#70 Warning
+Large setup violation  
+There is a large setup violation of -6.393 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit1_q_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#71 Warning
+Large setup violation  
+There is a large setup violation of -6.393 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit1_q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#72 Warning
+Large setup violation  
+There is a large setup violation of -6.453 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit1_q_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#73 Warning
+Large setup violation  
+There is a large setup violation of -6.453 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit1_q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#74 Warning
+Large setup violation  
+There is a large setup violation of -6.453 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit2_q_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#75 Warning
+Large setup violation  
+There is a large setup violation of -6.453 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit2_q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#76 Warning
+Large setup violation  
+There is a large setup violation of -6.453 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit2_q_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#77 Warning
+Large setup violation  
+There is a large setup violation of -6.453 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit2_q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#78 Warning
+Large setup violation  
+There is a large setup violation of -6.477 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#79 Warning
+Large setup violation  
+There is a large setup violation of -6.477 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[2]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#80 Warning
+Large setup violation  
+There is a large setup violation of -6.477 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#81 Warning
+Large setup violation  
+There is a large setup violation of -6.477 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[4]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#82 Warning
+Large setup violation  
+There is a large setup violation of -6.546 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[8]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#83 Warning
+Large setup violation  
+There is a large setup violation of -6.546 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[9]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#84 Warning
+Large setup violation  
+There is a large setup violation of -6.547 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[10]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#85 Warning
+Large setup violation  
+There is a large setup violation of -6.547 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[1]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#86 Warning
+Large setup violation  
+There is a large setup violation of -6.547 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[2]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#87 Warning
+Large setup violation  
+There is a large setup violation of -6.547 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#88 Warning
+Large setup violation  
+There is a large setup violation of -6.547 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[4]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#89 Warning
+Large setup violation  
+There is a large setup violation of -6.547 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[5]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#90 Warning
+Large setup violation  
+There is a large setup violation of -6.547 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[6]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#91 Warning
+Large setup violation  
+There is a large setup violation of -6.547 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[8]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#92 Warning
+Large setup violation  
+There is a large setup violation of -6.550 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#93 Warning
+Large setup violation  
+There is a large setup violation of -6.550 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#94 Warning
+Large setup violation  
+There is a large setup violation of -6.550 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#95 Warning
+Large setup violation  
+There is a large setup violation of -6.550 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[5]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#96 Warning
+Large setup violation  
+There is a large setup violation of -6.551 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[8]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#97 Warning
+Large setup violation  
+There is a large setup violation of -6.551 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[9]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#98 Warning
+Large setup violation  
+There is a large setup violation of -6.551 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[10]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#99 Warning
+Large setup violation  
+There is a large setup violation of -6.551 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[6]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#100 Warning
+Large setup violation  
+There is a large setup violation of -6.599 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_37_/Q_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#101 Warning
+Large setup violation  
+There is a large setup violation of -6.599 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_37_/Q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#102 Warning
+Large setup violation  
+There is a large setup violation of -6.599 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_37_/Q_reg[4]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#103 Warning
+Large setup violation  
+There is a large setup violation of -6.599 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_37_/Q_reg[5]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#104 Warning
+Large setup violation  
+There is a large setup violation of -6.599 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_37_/Q_reg[6]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#105 Warning
+Large setup violation  
+There is a large setup violation of -6.599 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_37_/Q_reg[8]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#106 Warning
+Large setup violation  
+There is a large setup violation of -6.608 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[7]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#107 Warning
+Large setup violation  
+There is a large setup violation of -6.608 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/bird/_38_/Q_reg[9]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#108 Warning
+Large setup violation  
+There is a large setup violation of -6.627 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[6]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#109 Warning
+Large setup violation  
+There is a large setup violation of -6.627 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[7]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#110 Warning
+Large setup violation  
+There is a large setup violation of -6.630 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_44_/Q_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#111 Warning
+Large setup violation  
+There is a large setup violation of -6.630 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_44_/Q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#112 Warning
+Large setup violation  
+There is a large setup violation of -6.630 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_44_/Q_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#113 Warning
+Large setup violation  
+There is a large setup violation of -6.630 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_44_/Q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#114 Warning
+Large setup violation  
+There is a large setup violation of -6.630 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_44_/Q_reg[4]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#115 Warning
+Large setup violation  
+There is a large setup violation of -6.630 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_44_/Q_reg[5]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#116 Warning
+Large setup violation  
+There is a large setup violation of -6.630 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_44_/Q_reg[6]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#117 Warning
+Large setup violation  
+There is a large setup violation of -6.630 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_44_/Q_reg[7]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#118 Warning
+Large setup violation  
+There is a large setup violation of -6.641 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[4]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#119 Warning
+Large setup violation  
+There is a large setup violation of -6.641 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[5]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#120 Warning
+Large setup violation  
+There is a large setup violation of -6.645 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#121 Warning
+Large setup violation  
+There is a large setup violation of -6.645 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[0]/S (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#122 Warning
+Large setup violation  
+There is a large setup violation of -6.652 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[10]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#123 Warning
+Large setup violation  
+There is a large setup violation of -6.652 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[7]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#124 Warning
+Large setup violation  
+There is a large setup violation of -6.753 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit3_q_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#125 Warning
+Large setup violation  
+There is a large setup violation of -6.753 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit3_q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#126 Warning
+Large setup violation  
+There is a large setup violation of -6.753 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit3_q_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#127 Warning
+Large setup violation  
+There is a large setup violation of -6.753 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit3_q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#128 Warning
+Large setup violation  
+There is a large setup violation of -7.070 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit0_q_reg[0]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#129 Warning
+Large setup violation  
+There is a large setup violation of -7.070 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit0_q_reg[1]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#130 Warning
+Large setup violation  
+There is a large setup violation of -7.070 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit0_q_reg[2]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#131 Warning
+Large setup violation  
+There is a large setup violation of -7.070 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/score_counter/digit0_q_reg[3]/R (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#132 Warning
+Large setup violation  
+There is a large setup violation of -7.172 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/FSM_sequential_state_q_reg[1]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#133 Warning
+Large setup violation  
+There is a large setup violation of -7.259 ns between game_synchronizer/sync_data_q_reg[0]/C (clocked by clk_100) and dinorun/FSM_sequential_state_q_reg[0]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#134 Warning
+Large setup violation  
+There is a large setup violation of -8.652 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[0]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#135 Warning
+Large setup violation  
+There is a large setup violation of -8.658 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[0]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#136 Warning
+Large setup violation  
+There is a large setup violation of -8.763 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[1]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#137 Warning
+Large setup violation  
+There is a large setup violation of -8.767 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[3]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#138 Warning
+Large setup violation  
+There is a large setup violation of -8.816 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[1]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#139 Warning
+Large setup violation  
+There is a large setup violation of -8.821 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[5]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#140 Warning
+Large setup violation  
+There is a large setup violation of -8.875 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[2]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#141 Warning
+Large setup violation  
+There is a large setup violation of -8.877 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[2]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#142 Warning
+Large setup violation  
+There is a large setup violation of -8.884 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[7]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#143 Warning
+Large setup violation  
+There is a large setup violation of -8.891 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[10]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#144 Warning
+Large setup violation  
+There is a large setup violation of -8.903 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[5]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#145 Warning
+Large setup violation  
+There is a large setup violation of -8.904 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[4]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#146 Warning
+Large setup violation  
+There is a large setup violation of -8.918 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[6]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#147 Warning
+Large setup violation  
+There is a large setup violation of -8.922 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[3]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#148 Warning
+Large setup violation  
+There is a large setup violation of -8.927 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[4]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#149 Warning
+Large setup violation  
+There is a large setup violation of -8.936 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[9]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#150 Warning
+Large setup violation  
+There is a large setup violation of -8.936 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[6]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#151 Warning
+Large setup violation  
+There is a large setup violation of -8.938 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[8]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#152 Warning
+Large setup violation  
+There is a large setup violation of -8.941 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[10]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#153 Warning
+Large setup violation  
+There is a large setup violation of -8.942 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[8]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#154 Warning
+Large setup violation  
+There is a large setup violation of -8.947 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_46_/Q_reg[9]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#155 Warning
+Large setup violation  
+There is a large setup violation of -8.968 ns between game_synchronizer/sync_data_q_reg[1]/C (clocked by clk_100) and dinorun/dino/_45_/Q_reg[7]/D (clocked by clk_25_175_mmcm_100_to_25_175). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on btnC relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on btnD relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on btnR relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on btnU relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on vgaBlue[0] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on vgaBlue[1] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on vgaBlue[2] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on vgaBlue[3] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on vgaGreen[0] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on vgaGreen[1] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An output delay is missing on vgaGreen[2] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An output delay is missing on vgaGreen[3] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An output delay is missing on vgaRed[0] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An output delay is missing on vgaRed[1] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An output delay is missing on vgaRed[2] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An output delay is missing on vgaRed[3] relative to the rising and/or falling clock edge(s) of clk_100.
+Related violations: <none>
+
+

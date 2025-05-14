@@ -1,0 +1,697 @@
+
+*** Running vivado
+    with args -log basys3.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source basys3.tcl
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Mon Nov 25 16:26:44 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source basys3.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1358.426 ; gain = 11.934 ; free physical = 6924 ; free virtual = 12542
+Command: synth_design -top basys3 -part xc7a35tcpg236-1 -flatten_hierarchy none
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Device 21-9227] Part: xc7a35tcpg236-1 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 386594
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2120.930 ; gain = 411.746 ; free physical = 5984 ; free virtual = 11604
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6901] identifier 'state_q' is used before its declaration [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/basys3_7seg_driver.sv:40]
+WARNING: [Synth 8-6901] identifier 'state_q' is used before its declaration [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/basys3_7seg_driver.sv:43]
+WARNING: [Synth 8-6901] identifier 'state_q' is used before its declaration [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/basys3_7seg_driver.sv:47]
+WARNING: [Synth 8-6901] identifier 'state_q' is used before its declaration [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/basys3_7seg_driver.sv:51]
+WARNING: [Synth 8-6901] identifier 'state_q' is used before its declaration [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/basys3_7seg_driver.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'basys3' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/basys3.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'clk_100M_to_clk_1k' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/clk_100M_to_clk_1k.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'clk_100M_to_clk_1k' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/clk_100M_to_clk_1k.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'mmcm_100_to_25_175' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/build/basys3/basys3.runs/synth_1/.Xil/Vivado-386425-aringadre-IdeaPad-Flex-5-14ALC05/realtime/mmcm_100_to_25_175_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mmcm_100_to_25_175' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/build/basys3/basys3.runs/synth_1/.Xil/Vivado-386425-aringadre-IdeaPad-Flex-5-14ALC05/realtime/mmcm_100_to_25_175_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'synchronizer' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/synchronizer.sv:4]
+	Parameter WIDTH bound to: 32'sb00000000000000000000000000000011 
+INFO: [Synth 8-6155] done synthesizing module 'synchronizer' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/synchronizer.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'synchronizer__parameterized0' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/synchronizer.sv:4]
+	Parameter WIDTH bound to: 32'sb00000000000000000000000000000001 
+INFO: [Synth 8-6155] done synthesizing module 'synchronizer__parameterized0' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/synchronizer.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'dinorun' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/dinorun.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'lfsr16' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/lfsr16.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'lfsr16' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/lfsr16.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/edge_detector.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/edge_detector.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'score_counter' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/score_counter.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'score_counter' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/score_counter.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'vga_timer' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/vga_timer.sv:6]
+INFO: [Synth 8-6155] done synthesizing module 'vga_timer' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/vga_timer.sv:6]
+INFO: [Synth 8-6157] synthesizing module 'title' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/objects/title.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'title' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/objects/title.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'bird' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/objects/bird.sv:1]
+INFO: [Synth 8-6157] synthesizing module '\$add ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:946]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 8 - type: integer 
+	Parameter B_WIDTH bound to: 1 - type: integer 
+	Parameter Y_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$add ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:946]
+INFO: [Synth 8-6157] synthesizing module '\$add__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:946]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 11 - type: integer 
+	Parameter B_WIDTH bound to: 6 - type: integer 
+	Parameter Y_WIDTH bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$add__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:946]
+INFO: [Synth 8-6157] synthesizing module '\$sdffe ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter CLK_POLARITY bound to: 1 - type: integer 
+	Parameter EN_POLARITY bound to: 1 - type: integer 
+	Parameter SRST_POLARITY bound to: 0 - type: integer 
+	Parameter SRST_VALUE bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module '\$sdffe ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+INFO: [Synth 8-6157] synthesizing module '\$sdffe__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter CLK_POLARITY bound to: 1 - type: integer 
+	Parameter EN_POLARITY bound to: 1 - type: integer 
+	Parameter SRST_POLARITY bound to: 0 - type: integer 
+	Parameter SRST_VALUE bound to: 8'b00000000 
+INFO: [Synth 8-6155] done synthesizing module '\$sdffe__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+INFO: [Synth 8-6157] synthesizing module '\$sdffe__parameterized1 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter CLK_POLARITY bound to: 1 - type: integer 
+	Parameter EN_POLARITY bound to: 1 - type: integer 
+	Parameter SRST_POLARITY bound to: 0 - type: integer 
+	Parameter SRST_VALUE bound to: 11'b00000000000 
+INFO: [Synth 8-6155] done synthesizing module '\$sdffe__parameterized1 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+INFO: [Synth 8-6157] synthesizing module '\$sdffe__parameterized2 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter CLK_POLARITY bound to: 1 - type: integer 
+	Parameter EN_POLARITY bound to: 1 - type: integer 
+	Parameter SRST_POLARITY bound to: 0 - type: integer 
+	Parameter SRST_VALUE bound to: 11'b11111010110 
+INFO: [Synth 8-6155] done synthesizing module '\$sdffe__parameterized2 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+INFO: [Synth 8-6157] synthesizing module '\$ne ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:788]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 2 - type: integer 
+	Parameter B_WIDTH bound to: 2 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$ne ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:788]
+INFO: [Synth 8-6157] synthesizing module '\$reduce_and ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:264]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 2 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$reduce_and ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:264]
+INFO: [Synth 8-6157] synthesizing module '\$reduce_and__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:264]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 3 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$reduce_and__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:264]
+INFO: [Synth 8-6157] synthesizing module '\$eq ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:757]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 8 - type: integer 
+	Parameter B_WIDTH bound to: 3 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$eq ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:757]
+INFO: [Synth 8-6157] synthesizing module '\$ge ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:885]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 10 - type: integer 
+	Parameter B_WIDTH bound to: 11 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$ge ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:885]
+INFO: [Synth 8-6157] synthesizing module '\$le ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:726]
+	Parameter A_SIGNED bound to: 1 - type: integer 
+	Parameter B_SIGNED bound to: 1 - type: integer 
+	Parameter A_WIDTH bound to: 11 - type: integer 
+	Parameter B_WIDTH bound to: 7 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$le ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:726]
+INFO: [Synth 8-6157] synthesizing module '\$logic_and ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1392]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 1 - type: integer 
+	Parameter B_WIDTH bound to: 1 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$logic_and ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1392]
+INFO: [Synth 8-6157] synthesizing module '\$logic_not ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1365]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 1 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$logic_not ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1365]
+INFO: [Synth 8-6157] synthesizing module '\$lt ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:695]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 10 - type: integer 
+	Parameter B_WIDTH bound to: 12 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$lt ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:695]
+INFO: [Synth 8-6157] synthesizing module '\$pmux ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1529]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter S_WIDTH bound to: 2 - type: integer 
+WARNING: [Synth 8-153] case item 1'bx will never be executed [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1546]
+WARNING: [Synth 8-153] case item 1'bx will never be executed [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1546]
+INFO: [Synth 8-6155] done synthesizing module '\$pmux ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1529]
+INFO: [Synth 8-6157] synthesizing module '\$not ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:42]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 1 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$not ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:42]
+INFO: [Synth 8-6157] synthesizing module '\$mux ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1488]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$mux ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1488]
+INFO: [Synth 8-6157] synthesizing module '\$pmux__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1529]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter S_WIDTH bound to: 4 - type: integer 
+WARNING: [Synth 8-153] case item 1'bx will never be executed [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1546]
+WARNING: [Synth 8-153] case item 1'bx will never be executed [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1546]
+WARNING: [Synth 8-153] case item 1'bx will never be executed [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1546]
+WARNING: [Synth 8-153] case item 1'bx will never be executed [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1546]
+INFO: [Synth 8-6155] done synthesizing module '\$pmux__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1529]
+INFO: [Synth 8-6157] synthesizing module '\$eq__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:757]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 2 - type: integer 
+	Parameter B_WIDTH bound to: 2 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$eq__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:757]
+INFO: [Synth 8-6157] synthesizing module '\$eq__parameterized1 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:757]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 2 - type: integer 
+	Parameter B_WIDTH bound to: 1 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$eq__parameterized1 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:757]
+INFO: [Synth 8-6157] synthesizing module '\$logic_not__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1365]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 2 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$logic_not__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1365]
+INFO: [Synth 8-6157] synthesizing module '\$mux__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1488]
+	Parameter WIDTH bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$mux__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1488]
+INFO: [Synth 8-6157] synthesizing module '\$mux__parameterized1 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1488]
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$mux__parameterized1 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1488]
+INFO: [Synth 8-6157] synthesizing module '\$shiftx ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:548]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 21 - type: integer 
+	Parameter B_WIDTH bound to: 10 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$shiftx ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:548]
+INFO: [Synth 8-6157] synthesizing module '\$sub ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+	Parameter A_SIGNED bound to: 1 - type: integer 
+	Parameter B_SIGNED bound to: 1 - type: integer 
+	Parameter A_WIDTH bound to: 11 - type: integer 
+	Parameter B_WIDTH bound to: 5 - type: integer 
+	Parameter Y_WIDTH bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$sub ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+INFO: [Synth 8-6157] synthesizing module '\$sub__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 10 - type: integer 
+	Parameter B_WIDTH bound to: 11 - type: integer 
+	Parameter Y_WIDTH bound to: 12 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$sub__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+INFO: [Synth 8-6157] synthesizing module '\$sub__parameterized1 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 5 - type: integer 
+	Parameter B_WIDTH bound to: 10 - type: integer 
+	Parameter Y_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$sub__parameterized1 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+INFO: [Synth 8-6155] done synthesizing module 'bird' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/objects/bird.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'cactus' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/objects/cactus.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/objects/cactus.sv:216]
+INFO: [Synth 8-6155] done synthesizing module 'cactus' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/objects/cactus.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'dino' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/objects/dino.sv:1]
+INFO: [Synth 8-6157] synthesizing module '\$add__parameterized1 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:946]
+	Parameter A_SIGNED bound to: 1 - type: integer 
+	Parameter B_SIGNED bound to: 1 - type: integer 
+	Parameter A_WIDTH bound to: 11 - type: integer 
+	Parameter B_WIDTH bound to: 11 - type: integer 
+	Parameter Y_WIDTH bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$add__parameterized1 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:946]
+INFO: [Synth 8-6157] synthesizing module '\$add__parameterized2 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:946]
+	Parameter A_SIGNED bound to: 1 - type: integer 
+	Parameter B_SIGNED bound to: 1 - type: integer 
+	Parameter A_WIDTH bound to: 11 - type: integer 
+	Parameter B_WIDTH bound to: 3 - type: integer 
+	Parameter Y_WIDTH bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$add__parameterized2 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:946]
+INFO: [Synth 8-6157] synthesizing module '\$sdffe__parameterized3 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+	Parameter WIDTH bound to: 11 - type: integer 
+	Parameter CLK_POLARITY bound to: 1 - type: integer 
+	Parameter EN_POLARITY bound to: 1 - type: integer 
+	Parameter SRST_POLARITY bound to: 0 - type: integer 
+	Parameter SRST_VALUE bound to: 11'b00101100101 
+INFO: [Synth 8-6155] done synthesizing module '\$sdffe__parameterized3 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:2346]
+INFO: [Synth 8-6157] synthesizing module '\$eq__parameterized2 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:757]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 8 - type: integer 
+	Parameter B_WIDTH bound to: 2 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$eq__parameterized2 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:757]
+INFO: [Synth 8-6157] synthesizing module '\$ge__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:885]
+	Parameter A_SIGNED bound to: 1 - type: integer 
+	Parameter B_SIGNED bound to: 1 - type: integer 
+	Parameter A_WIDTH bound to: 11 - type: integer 
+	Parameter B_WIDTH bound to: 10 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$ge__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:885]
+INFO: [Synth 8-6157] synthesizing module '\$ge__parameterized1 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:885]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 10 - type: integer 
+	Parameter B_WIDTH bound to: 7 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$ge__parameterized1 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:885]
+INFO: [Synth 8-6157] synthesizing module '\$lt__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:695]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 10 - type: integer 
+	Parameter B_WIDTH bound to: 8 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$lt__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:695]
+INFO: [Synth 8-6157] synthesizing module '\$shiftx__parameterized0 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:548]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 58 - type: integer 
+	Parameter B_WIDTH bound to: 10 - type: integer 
+	Parameter Y_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$shiftx__parameterized0 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:548]
+INFO: [Synth 8-6157] synthesizing module '\$sub__parameterized2 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 10 - type: integer 
+	Parameter B_WIDTH bound to: 7 - type: integer 
+	Parameter Y_WIDTH bound to: 11 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$sub__parameterized2 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+INFO: [Synth 8-6157] synthesizing module '\$sub__parameterized3 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+	Parameter A_SIGNED bound to: 0 - type: integer 
+	Parameter B_SIGNED bound to: 0 - type: integer 
+	Parameter A_WIDTH bound to: 6 - type: integer 
+	Parameter B_WIDTH bound to: 10 - type: integer 
+	Parameter Y_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$sub__parameterized3 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:977]
+INFO: [Synth 8-6157] synthesizing module '\$mux__parameterized2 ' [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1488]
+	Parameter WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module '\$mux__parameterized2 ' (0#1) [/home/aringadre/Utils/oss-cad-suite/share/yosys/simlib.v:1488]
+INFO: [Synth 8-6155] done synthesizing module 'dino' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/objects/dino.sv:1]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/dinorun.sv:301]
+INFO: [Synth 8-226] default block is never used [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/dinorun.sv:301]
+INFO: [Synth 8-6155] done synthesizing module 'dinorun' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/dinorun.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'basys3_7seg_driver' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/basys3_7seg_driver.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'hex7seg' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/hex7seg.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'hex7seg' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/hex7seg.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'basys3_7seg_driver' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/rtl/basys3/basys3_7seg_driver.sv:4]
+WARNING: [Synth 8-689] width (1) of port connection 'digit0_en_i' does not match port width (4) of module 'basys3_7seg_driver' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/basys3.sv:110]
+WARNING: [Synth 8-689] width (1) of port connection 'digit1_en_i' does not match port width (4) of module 'basys3_7seg_driver' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/basys3.sv:112]
+WARNING: [Synth 8-689] width (1) of port connection 'digit2_en_i' does not match port width (4) of module 'basys3_7seg_driver' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/basys3.sv:114]
+WARNING: [Synth 8-689] width (1) of port connection 'digit3_en_i' does not match port width (4) of module 'basys3_7seg_driver' [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/basys3.sv:116]
+INFO: [Synth 8-6155] done synthesizing module 'basys3' (0#1) [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/basys3.sv:4]
+WARNING: [Synth 8-7129] Port digit0_en_i[3] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit0_en_i[2] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit0_en_i[1] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit1_en_i[3] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit1_en_i[2] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit1_en_i[1] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit2_en_i[3] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit2_en_i[2] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit2_en_i[1] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit3_en_i[3] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit3_en_i[2] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit3_en_i[1] in module basys3_7seg_driver is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2206.898 ; gain = 497.715 ; free physical = 5837 ; free virtual = 11461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2224.711 ; gain = 515.527 ; free physical = 5837 ; free virtual = 11461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2224.711 ; gain = 515.527 ; free physical = 5837 ; free virtual = 11461
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2224.711 ; gain = 0.000 ; free physical = 5837 ; free virtual = 11461
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/build/basys3/basys3.gen/sources_1/ip/mmcm_100_to_25_175/mmcm_100_to_25_175/mmcm_100_to_25_175_in_context.xdc] for cell 'mmcm_100_to_25_175'
+Finished Parsing XDC File [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/build/basys3/basys3.gen/sources_1/ip/mmcm_100_to_25_175/mmcm_100_to_25_175/mmcm_100_to_25_175_in_context.xdc] for cell 'mmcm_100_to_25_175'
+Parsing XDC File [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:24]
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:31]
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'led[4]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'led[5]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:36]
+WARNING: [Vivado 12-584] No ports matched 'led[6]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'led[7]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'led[8]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'led[9]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'led[10]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'led[11]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:42]
+WARNING: [Vivado 12-584] No ports matched 'led[12]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:43]
+WARNING: [Vivado 12-584] No ports matched 'led[13]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:44]
+WARNING: [Vivado 12-584] No ports matched 'led[14]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:45]
+WARNING: [Vivado 12-584] No ports matched 'led[15]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:46]
+WARNING: [Vivado 12-584] No ports matched 'dp'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:58]
+WARNING: [Vivado 12-584] No ports matched 'btnL'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:69]
+WARNING: [Vivado 12-584] No ports matched 'JA[0]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:75]
+WARNING: [Vivado 12-584] No ports matched 'JA[1]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'JA[2]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:77]
+WARNING: [Vivado 12-584] No ports matched 'JA[3]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:78]
+WARNING: [Vivado 12-584] No ports matched 'JA[4]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:79]
+WARNING: [Vivado 12-584] No ports matched 'JA[5]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:80]
+WARNING: [Vivado 12-584] No ports matched 'JA[6]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:81]
+WARNING: [Vivado 12-584] No ports matched 'JA[7]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:82]
+WARNING: [Vivado 12-584] No ports matched 'JB[0]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:85]
+WARNING: [Vivado 12-584] No ports matched 'JB[1]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:86]
+WARNING: [Vivado 12-584] No ports matched 'JB[2]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'JB[3]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:88]
+WARNING: [Vivado 12-584] No ports matched 'JB[4]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:89]
+WARNING: [Vivado 12-584] No ports matched 'JB[5]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:90]
+WARNING: [Vivado 12-584] No ports matched 'JB[6]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:91]
+WARNING: [Vivado 12-584] No ports matched 'JB[7]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:92]
+WARNING: [Vivado 12-584] No ports matched 'JC[0]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:95]
+WARNING: [Vivado 12-584] No ports matched 'JC[1]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:96]
+WARNING: [Vivado 12-584] No ports matched 'JC[2]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:97]
+WARNING: [Vivado 12-584] No ports matched 'JC[3]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:98]
+WARNING: [Vivado 12-584] No ports matched 'JC[4]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:99]
+WARNING: [Vivado 12-584] No ports matched 'JC[5]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:100]
+WARNING: [Vivado 12-584] No ports matched 'JC[6]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:101]
+WARNING: [Vivado 12-584] No ports matched 'JC[7]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:102]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[0]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:105]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[1]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:106]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[2]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:107]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[3]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:108]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[4]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:109]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[5]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:110]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[6]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:111]
+WARNING: [Vivado 12-584] No ports matched 'JXADC[7]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:112]
+WARNING: [Vivado 12-584] No ports matched 'RsRx'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:133]
+WARNING: [Vivado 12-584] No ports matched 'RsTx'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:134]
+WARNING: [Vivado 12-584] No ports matched 'PS2Clk'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:138]
+WARNING: [Vivado 12-584] No ports matched 'PS2Data'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:139]
+WARNING: [Vivado 12-584] No ports matched 'QspiDB[0]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:145]
+WARNING: [Vivado 12-584] No ports matched 'QspiDB[1]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:146]
+WARNING: [Vivado 12-584] No ports matched 'QspiDB[2]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:147]
+WARNING: [Vivado 12-584] No ports matched 'QspiDB[3]'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:148]
+WARNING: [Vivado 12-584] No ports matched 'QspiCSn'. [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc:149]
+Finished Parsing XDC File [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/basys3_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/basys3_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/basys3_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/constraints.xdc]
+Finished Parsing XDC File [/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/constraints.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2376.461 ; gain = 0.000 ; free physical = 5793 ; free virtual = 11411
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2376.461 ; gain = 0.000 ; free physical = 5793 ; free virtual = 11411
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2376.461 ; gain = 667.277 ; free physical = 5862 ; free virtual = 11483
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5862 ; free virtual = 11483
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk_100. (constraint file  /home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/build/basys3/basys3.gen/sources_1/ip/mmcm_100_to_25_175/mmcm_100_to_25_175/mmcm_100_to_25_175_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100. (constraint file  /home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/build/basys3/basys3.gen/sources_1/ip/mmcm_100_to_25_175/mmcm_100_to_25_175/mmcm_100_to_25_175_in_context.xdc, line 4).
+Applied set_property KEEP_HIERARCHY = SOFT for mmcm_100_to_25_175. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5862 ; free virtual = 11483
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'dinorun'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+        WAITING_TO_START |                               00 |                               00
+                     RUN |                               01 |                               01
+                     HIT |                               10 |                               10
+               FLASH_HIT |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'sequential' in module 'dinorun'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5859 ; free virtual = 11483
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   18 Bit       Adders := 1     
+	   3 Input   13 Bit       Adders := 2     
+	   2 Input   12 Bit       Adders := 3     
+	   3 Input   12 Bit       Adders := 3     
+	   3 Input   11 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 4     
+	   2 Input   10 Bit       Adders := 2     
+	   3 Input   10 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 5     
+	   3 Input    4 Bit       Adders := 2     
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               11 Bit    Registers := 6     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 18    
++---Multipliers : 
+	               3x32  Multipliers := 1     
++---Muxes : 
+	  44 Input   58 Bit        Muxes := 4     
+	   8 Input   47 Bit        Muxes := 1     
+	  19 Input   21 Bit        Muxes := 1     
+	  34 Input   15 Bit        Muxes := 8     
+	   4 Input   15 Bit        Muxes := 2     
+	   2 Input   11 Bit        Muxes := 12    
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 12    
+	   4 Input    4 Bit        Muxes := 8     
+	   2 Input    2 Bit        Muxes := 7     
+	   4 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 27    
+	   4 Input    1 Bit        Muxes := 9     
+	   5 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP title_x0, operation Mode is: A*(B:0x2f).
+DSP Report: operator title_x0 is absorbed into DSP title_x0.
+WARNING: [Synth 8-7129] Port digit0_en_i[3] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit0_en_i[2] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit0_en_i[1] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit1_en_i[3] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit1_en_i[2] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit1_en_i[1] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit2_en_i[3] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit2_en_i[2] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit2_en_i[1] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit3_en_i[3] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit3_en_i[2] in module basys3_7seg_driver is either unconnected or has no load
+WARNING: [Synth 8-7129] Port digit3_en_i[1] in module basys3_7seg_driver is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5875 ; free virtual = 11499
+---------------------------------------------------------------------------------
+ Sort Area is  title_x0_0 : 0 0 : 145 145 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+----------------+---------------+----------------+
+|Module Name | RTL Object     | Depth x Width | Implemented As | 
++------------+----------------+---------------+----------------+
+|bird        | BIRD_UP        | 32x18         | LUT            | 
+|dino        | DINO_DOWNRIGHT | 64x23         | LUT            | 
+|dino        | DINO_DOWNLEFT  | 64x24         | LUT            | 
+|dino        | p_0_out        | 64x24         | LUT            | 
++------------+----------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|title       | A*(B:0x2f)  | 10     | 6      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'clk_100'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_100M_to_clk_1k/clk_1k_o' to pin 'clk_100M_to_clk_1k/clk_q_reg/Q'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'clk_100M_to_clk_1k/clk_100M_i' to 'game_synchronizer/clk_target_q2_reg/C'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5903 ; free virtual = 11531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5904 ; free virtual = 11533
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5908 ; free virtual = 11538
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5927 ; free virtual = 11556
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5927 ; free virtual = 11556
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5927 ; free virtual = 11556
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|title       | A*B         | 10     | 6      | -      | -      | 16     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+-------------------+----------+
+|      |BlackBox name      |Instances |
++------+-------------------+----------+
+|1     |mmcm_100_to_25_175 |         1|
++------+-------------------+----------+
+
+Report Cell Usage: 
++------+---------------+------+
+|      |Cell           |Count |
++------+---------------+------+
+|1     |mmcm_100_to_25 |     1|
+|2     |CARRY4         |   140|
+|3     |DSP48E1        |     1|
+|4     |LUT1           |   105|
+|5     |LUT2           |   313|
+|6     |LUT3           |   202|
+|7     |LUT4           |   192|
+|8     |LUT5           |   164|
+|9     |LUT6           |   300|
+|10    |MUXF7          |    40|
+|11    |MUXF8          |     3|
+|12    |FDCE           |    18|
+|13    |FDPE           |     4|
+|14    |FDRE           |   137|
+|15    |FDSE           |    17|
+|16    |IBUF           |     4|
+|17    |OBUF           |    25|
++------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2384.465 ; gain = 675.281 ; free physical = 5927 ; free virtual = 11556
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2384.465 ; gain = 523.531 ; free physical = 5927 ; free virtual = 11557
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2384.473 ; gain = 675.281 ; free physical = 5927 ; free virtual = 11557
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2384.473 ; gain = 0.000 ; free physical = 6276 ; free virtual = 11906
+INFO: [Netlist 29-17] Analyzing 184 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2440.492 ; gain = 0.000 ; free physical = 6298 ; free virtual = 11920
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 843e5059
+INFO: [Common 17-83] Releasing license: Synthesis
+135 Infos, 117 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:33 . Memory (MB): peak = 2440.492 ; gain = 1067.223 ; free physical = 6298 ; free virtual = 11920
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1961.356; main = 1574.958; forked = 439.228
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3481.336; main = 2440.496; forked = 1096.867
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2464.504 ; gain = 0.000 ; free physical = 6298 ; free virtual = 11921
+INFO: [Common 17-1381] The checkpoint '/home/aringadre/cse100/lab6_2024.11.19.19.10/starter/synth/basys3/build/basys3/basys3.runs/synth_1/basys3.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file basys3_utilization_synth.rpt -pb basys3_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 25 16:27:29 2024...

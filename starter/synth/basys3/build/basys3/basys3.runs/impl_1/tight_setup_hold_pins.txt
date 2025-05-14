@@ -1,0 +1,9 @@
++===============================+===============================+=========================================+
+| Launch Setup Clock            | Launch Hold Clock             | Pin                                     |
++===============================+===============================+=========================================+
+| clk_100                       | clk_25_175_mmcm_100_to_25_175 | dinorun/FSM_sequential_state_q_reg[0]/D |
+| clk_100                       | clk_25_175_mmcm_100_to_25_175 | dinorun/FSM_sequential_state_q_reg[1]/D |
+| clk_100                       | clk_25_175_mmcm_100_to_25_175 | dinorun/flash_dino_q_reg/D              |
+| clk_25_175_mmcm_100_to_25_175 | clk_25_175_mmcm_100_to_25_175 | synchronizer_25_175/clk_target_q1_reg/D |
+| clk_25_175_mmcm_100_to_25_175 | clk_25_175_mmcm_100_to_25_175 | game_synchronizer/clk_target_q1_reg/D   |
++-------------------------------+-------------------------------+-----------------------------------------+
